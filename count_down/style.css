@@ -1,0 +1,15 @@
+.box {
+  width: 80vw;
+  height: 80vh;
+  background-color: lightblue;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#count_down {
+  font-size: 1.64rem;
+  font-weight: 700;
+}
