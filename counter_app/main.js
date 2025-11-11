@@ -20,6 +20,12 @@ function count_down() {
   document.getElementById("count_down").innerText = count_number();
 }
 
+// ========================================= //
+
+function save_count() {
+  console.log(count_digit);
+}
+
 // let countEl = document.getElementById("count-el")
 // let count = 0
 
