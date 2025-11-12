@@ -11,6 +11,7 @@ body {
   font-family: "Akony", sans-serif;
 }
 .box {
+  max-width: 700px;
   width: 64vw;
   height: 64vh;
   background-color: lightblue;
@@ -77,4 +78,59 @@ button::before {
   );
   transition: all 0.475s;
 }
-/* =============== */
+/* ======== Responsive ======= */
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 1024px) {
+  .box {
+    width: 80vw;
+    height: 60vh;
+    border-radius: 48px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  #count_down,
+  p {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 0 1.5rem;
+    height: 2rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .box {
+    width: 90vw;
+    height: auto;
+    border-radius: 32px;
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+    padding: 12px;
+  }
+
+  #count_down,
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  button {
+    width: 80%;
+    height: 2.2rem;
+    font-size: 1rem;
+  }
+}
