@@ -5,10 +5,18 @@
 
 // Render the welcome message using welcomeEl.innerText
 
+let greetingEl = document.getElementById("welcome-el");
+
 let myName = "John!";
 
 let greeting = "Welcome to our Universe, ";
 
-let greetingEl = greeting + myName;
+greetingEl.innerText = greeting + myName;
 
-document.getElementById("welcome-el").innerText = myGreeting;
+// Add an emoji to the end!
+// WRITE YOUR CODE BELOW HERE
+// HINT: count = count + 1
+
+// greetingEl.innerText = greetingEl.innerText + "👋";
+
+greetingEl.innerText += "👋";

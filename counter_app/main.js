@@ -13,6 +13,7 @@ function count_number() {
   if (count_digit <= 10) {
     return count_digit;
   } else {
+    count_digit = "No more tickets";
     return "No more tickets";
   }
 }
@@ -22,14 +23,19 @@ function count_down() {
 
 // ========================================= //
 
+// 1. Grab the save-el paragraph and store it in a variable called saveEl
+let saveEl = document.getElementById("save_el");
 function save_count() {
-  console.log(count_digit);
+  saveEl.innerHTML = saveEl.innerHTML + " " + count_digit + " - ";
 }
 
-// let countEl = document.getElementById("count-el")
-// let count = 0
+// 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+// 3. Render the variable in the saveEl using innerText
+// NB: Make sure to not delete the existing content of the paragraph
 
-// function increment() {
-//     count = count + 1
-//     countEl.innerText = count
-// }
+// =========== Reset Button ================ //
+
+function resetCount() {
+  count_digit = 0;
+  document.getElementById("count_down").innerText = count_digit;
+}

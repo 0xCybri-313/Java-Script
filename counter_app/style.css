@@ -4,27 +4,77 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("subway-station.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  font-family: "Akony", sans-serif;
 }
 .box {
   width: 64vw;
   height: 64vh;
   background-color: lightblue;
   border: 2px solid rgb(0, 0, 0);
-  margin: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 64px;
+  padding: 16px;
 }
-#count_down {
-  font-size: 1.64rem;
-  font-weight: 700;
+h1 {
+  padding: 16px;
+  text-align: center;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  font-size: 48px;
+  font-weight: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
+#count_down,
+p {
+  font-size: 1.32rem;
+  font-weight: 800;
+}
+/* From Uiverse.io by Madflows */
 button {
-  margin: 0.7rem;
-  border-radius: 1rem;
-  width: 4rem;
-  background-color: rgb(97, 255, 247);
-  border: 2px solid black;
+  margin: 8px;
+  position: relative;
+  overflow: hidden;
+  height: 1.5rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
   cursor: pointer;
 }
+
+button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 10;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+/* =============== */

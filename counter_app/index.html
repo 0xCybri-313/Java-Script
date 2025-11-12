@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PerCount</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akony&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="box">
-      <h2>Apna Station</h2>
+      <h1>CYBER STATION</h1>
       <p>Tickets for free:</p>
       <span id="count_down">0</span>
-      <button id="start_button" onclick="count_down()">Start</button>
-      <button id="save_button" onclick="save_count()">Save</button>
+      <button id="start_button" onclick="count_down()">
+        <div class="button-content">START</div>
+      </button>
+      <button id="save_button" onclick="save_count()">
+        <div class="button-content">SAVE</div>
+      </button>
+      <p id="save_el">Previous tickets:</p>
+      <button id="reset_button" onclick="resetCount()">
+        <div class="button-content">RESET</div>
+      </button>
     </div>
 
     <script src="main.js"></script>
