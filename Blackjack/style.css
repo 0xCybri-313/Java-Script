@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Akony", sans-serif;
+  background-color: cadetblue;
+}
+.con {
+  max-width: 700px;
+  width: 64vw;
+  height: 64vh;
+  background-image: url("./images/table.png");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 64px;
+  padding: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  gap: 16px;
+  color: aliceblue;
+}
+h1 {
+  color: goldenrod;
+}
+#message-el {
+  font-style: italic;
+}
+button {
+  color: #016f32;
+  width: 200px;
+  background: goldenrod;
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  margin: 8px;
+}
