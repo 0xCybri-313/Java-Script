@@ -24,17 +24,26 @@ function renderGame() {
 }
 
 function newCard() {
-  let card = 6;
+  let card = getRandomNumber();
   sum += card;
   // Push the card to the cards array
   cards.push(card);
   renderGame();
 }
-
+function getRandomNumber() {
+  let ranCard = Math.floor(Math.random() * 13) + 1;
+  if (ranCard > 10) {
+    return 10;
+  } else if (ranCard === 1) {
+    return 11;
+  } else {
+    return ranCard;
+  }
+}
 // =================== Main Program =================== //
 
-let firstCard = 10;
-let secondCard = 4;
+let firstCard = getRandomNumber();
+let secondCard = getRandomNumber();
 let cards = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
