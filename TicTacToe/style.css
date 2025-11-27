@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 main {
   display: flex;
@@ -15,7 +16,7 @@ main {
   flex-direction: column;
 }
 .game_box {
-  margin: 64px;
+  margin: 64px 0px 32px 0px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -34,7 +35,7 @@ h1 {
   font-weight: 700;
   top: 0;
 }
-button {
+.boxes {
   margin: 8px;
   padding: 8px;
   border-radius: 16px;
@@ -44,4 +45,43 @@ button {
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 700;
+  box-shadow: aliceblue 3px 3px 3px 0.5px;
+  transition: all 0.3s ease;
+}
+.boxes:hover {
+  background-color: aliceblue;
+  color: black;
+  box-shadow: black 3px 3px 3px 0.5px;
+}
+.result {
+  padding: 8px;
+  border-radius: 16px;
+  border: none;
+  background-color: rgb(174, 221, 189);
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.reset,
+.new_game {
+  width: 150px;
+  margin: 32px 8px 8px 8px;
+  padding: 8px;
+  border-radius: 16px;
+  border: none;
+  border: 2px solid rgb(174, 221, 189);
+  background-color: rgb(0, 0, 0);
+  color: rgb(174, 221, 189);
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.reset:hover,
+.new_game:hover {
+  background-color: aliceblue;
+  color: black;
+}
+.hide {
+  display: none;
 }
