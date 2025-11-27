@@ -1,8 +1,11 @@
+// =============== Declarations ============== //
+
 let boxes = document.querySelectorAll(".boxes");
 let restart = document.querySelector(".reset");
 let newGame = document.querySelector(".new_game");
 let message = document.querySelector(".result");
 let turn = true;
+let count = 1;
 
 // 2D array of win pattern
 const win = [
@@ -19,23 +22,10 @@ const win = [
 const startGame = () => {
   turn = true;
   enabledBtn();
+  count = 1;
 };
 
-boxes.forEach((box) => {
-  box.addEventListener("click", () => {
-    if (turn) {
-      box.innerText = "X";
-      console.log("X");
-      turn = false;
-    } else {
-      box.innerText = "O";
-      console.log("O");
-      turn = true;
-    }
-    box.disabled = true;
-    checkWin();
-  });
-});
+// =============== Functions ============== //
 
 const disabledBtn = () => {
   for (let box of boxes) {
@@ -56,18 +46,68 @@ const showWinner = (winner) => {
   message.innerText = `Winner is :${winner}`;
   disabledBtn();
 };
+// const checkWin = () => {
+//   console.log(count);
+//   for (let pattern of win) {
+//     let val1 = boxes[pattern[0]].innerText;
+//     let val2 = boxes[pattern[1]].innerText;
+//     let val3 = boxes[pattern[2]].innerText;
+
+//     if ((val1 != "", val2 != "", val3 != "")) {
+//       if (val1 === val2 && val2 === val3) {
+//         showWinner(val1);
+//       }
+//     }
+//     if (count === 9) {
+//       message.classList.remove("hide");
+//       message.textContent = "Draw";
+//       console.log("Draw");
+//     }
+//   }
+// };
 const checkWin = () => {
+  let winnerFound = false;
+
   for (let pattern of win) {
     let val1 = boxes[pattern[0]].innerText;
     let val2 = boxes[pattern[1]].innerText;
     let val3 = boxes[pattern[2]].innerText;
 
-    if ((val1 != "", val2 != "", val3 != "")) {
+    if (val1 !== "" && val2 !== "" && val3 !== "") {
       if (val1 === val2 && val2 === val3) {
         showWinner(val1);
+        winnerFound = true;
+        break;
       }
     }
   }
+
+  if (!winnerFound && count === 9) {
+    newGame.classList.remove("hide");
+    message.classList.remove("hide");
+    message.textContent = "Draw";
+    console.log("Draw");
+  }
 };
 
+// =============== Main ============== //
+
+boxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    if (turn) {
+      box.innerText = "X";
+      console.log("X");
+      turn = false;
+    } else {
+      box.innerText = "O";
+      console.log("O");
+      turn = true;
+    }
+    box.disabled = true;
+    checkWin();
+    count++;
+  });
+});
+
 newGame.addEventListener("click", startGame);
+restart.addEventListener("click", startGame);
