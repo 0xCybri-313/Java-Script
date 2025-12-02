@@ -7,11 +7,7 @@
 
 let greetingEl = document.getElementById("welcome-el");
 
-let myName = "John!";
-
 let greeting = "Welcome to our Universe, ";
-
-greetingEl.innerText = greeting + myName;
 
 // Add an emoji to the end!
 // WRITE YOUR CODE BELOW HERE
@@ -20,3 +16,18 @@ greetingEl.innerText = greeting + myName;
 // greetingEl.innerText = greetingEl.innerText + "👋";
 
 greetingEl.innerText += "👋";
+
+//========= Function ==========//
+
+function greetFunction(myName, printGreet) {
+  setTimeout(() => {
+    greetingEl.innerText = greeting + myName;
+    printGreet();
+  }, 1500);
+}
+
+greetFunction("John!", () => {
+  greetFunction("Naseem", () => {
+    greetFunction("Khursheed");
+  });
+});
