@@ -28,6 +28,8 @@ function greetFunction(myName, printGreet) {
 
 greetFunction("John!", () => {
   greetFunction("Naseem", () => {
-    greetFunction("Khursheed");
+    greetFunction("Khursheed", () => {
+      greetingEl.innerText += "👋";
+    });
   });
 });
