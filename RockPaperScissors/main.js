@@ -21,13 +21,18 @@ const playgame = (userChoice) => {
     } else {
       userWin = compChoice === "rock" ? false : true;
     }
-    if (userWin) {
-      resultMessage.textContent = "You - Win";
-      showUserScore.textContent = ++userScore;
-    } else {
-      resultMessage.textContent = "AI - Win";
-      showCompScore.textContent = ++compScore;
-    }
+    showWinner(userWin);
+  }
+};
+
+const showWinner = (userWin) => {
+  if (userWin) {
+    resultMessage.textContent = "You - Win";
+    resultMessage.style.backgroundColor = "green";
+    showUserScore.textContent = ++userScore;
+  } else {
+    resultMessage.textContent = "AI - Win";
+    showCompScore.textContent = ++compScore;
   }
 };
 const genCompChoice = () => {
