@@ -65,6 +65,7 @@ img:hover {
   gap: 32px;
 }
 .message {
+  width: 256px;
   display: flex;
   justify-content: center;
   align-items: center;

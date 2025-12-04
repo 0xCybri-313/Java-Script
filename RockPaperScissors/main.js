@@ -1,20 +1,32 @@
 let userScore = 0;
-let computerScore = 0;
+let compScore = 0;
+let resultMessage = document.querySelector(".message");
+let showUserScore = document.querySelector("#your-score");
+let showCompScore = document.querySelector("#comp-score");
 const choices = document.querySelectorAll(".option");
 
 // Function
 
 const playgame = (userChoice) => {
-  console.log("User Choice is ", userChoice);
   const compChoice = genCompChoice();
-  console.log("Computer Choice is ", compChoice);
 
-  if (userChoice === computerChoice) {
+  if (userChoice === compChoice) {
     drawGame();
   } else {
     userWin = true;
     if (userChoice === "rock") {
       userWin = compChoice === "paper" ? false : true;
+    } else if (userChoice === "paper") {
+      userWin = compChoice === "scissors" ? false : true;
+    } else {
+      userWin = compChoice === "rock" ? false : true;
+    }
+    if (userWin) {
+      resultMessage.textContent = "You - Win";
+      showUserScore.textContent = ++userScore;
+    } else {
+      resultMessage.textContent = "AI - Win";
+      showCompScore.textContent = ++compScore;
     }
   }
 };
@@ -24,7 +36,7 @@ const genCompChoice = () => {
   return option[ranIndex];
 };
 const drawGame = () => {
-  console.log("Draw");
+  resultMessage.textContent = "Draw";
 };
 
 choices.forEach((choice) => {
