@@ -32,6 +32,7 @@ const showWinner = (userWin) => {
     showUserScore.textContent = ++userScore;
   } else {
     resultMessage.textContent = "AI - Win";
+    resultMessage.style.backgroundColor = "red";
     showCompScore.textContent = ++compScore;
   }
 };
@@ -42,6 +43,7 @@ const genCompChoice = () => {
 };
 const drawGame = () => {
   resultMessage.textContent = "Draw";
+  resultMessage.style.backgroundColor = "gray";
 };
 
 choices.forEach((choice) => {
