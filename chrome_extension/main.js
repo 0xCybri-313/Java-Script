@@ -1,6 +1,7 @@
 // ============= Declaration ============= //
 
 const inputBtn = document.querySelector("#input-btn");
+const deleteBtn = document.querySelector("#delete-btn");
 const inputEl = document.querySelector("#input-el");
 const ulEl = document.querySelector("#ul-el");
 let myLeads = [];
@@ -22,7 +23,7 @@ function renderLeads() {
 
 // ============= Main ============= //
 
-let leadFormLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+const leadFormLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 if (leadFormLocalStorage) {
   myLeads = leadFormLocalStorage;
   renderLeads();
@@ -36,4 +37,10 @@ inputBtn.addEventListener("click", () => {
     renderLeads();
     inputEl.value = "";
   }
+});
+
+deleteBtn.addEventListener("dblclick", () => {
+  localStorage.clear();
+  myLeads = [];
+  renderLeads();
 });
