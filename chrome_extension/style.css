@@ -5,10 +5,8 @@
 }
 body {
   width: 100vw;
-  height: 100vh;
   padding: 16px;
   min-width: 400px;
-  min-height: 100px;
 }
 input {
   padding: 8px 16px;
