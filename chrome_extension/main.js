@@ -1,3 +1,21 @@
+// ============= Firebase ============= //
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  databaseURL:
+    "https://leads-tracker-app-90626-default-rtdb.asia-southeast1.firebasedatabase.app/",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+console.log(firebaseConfig.databaseURL);
+
 // ============= Declaration ============= //
 
 const inputBtn = document.querySelector("#input-btn");
@@ -6,7 +24,6 @@ const inputEl = document.querySelector("#input-el");
 const ulEl = document.querySelector("#ul-el");
 const tabBtn = document.querySelector("#tab-btn");
 let myLeads = [];
-const tabs = [{ url: "https://www.linkedin.com/in/per-harald-borgen/" }];
 
 // ============= Function ============= //
 
