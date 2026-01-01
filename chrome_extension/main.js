@@ -11,14 +11,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+// const app = initializeApp(firebaseConfig);
+// const database = getDatabase(app);
 
-console.log(firebaseConfig.databaseURL);
+// console.log(firebaseConfig.databaseURL);
 
 // ============= Declaration ============= //
 
-const inputBtn = document.querySelector("#input-btn");
+const inputBtn = document.querySelector("#input");
 const deleteBtn = document.querySelector("#delete-btn");
 const inputEl = document.querySelector("#input-el");
 const ulEl = document.querySelector("#ul-el");
